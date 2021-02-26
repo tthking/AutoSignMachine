@@ -112,4 +112,22 @@ jobs:
         password: ${{secrets.password}}
         appid: ${{secrets.appid}}
       run: node index.js unicom --user=${user} --password=${password} --appid=${appid}
+      
+      # 运行 unicom 签到任务
+    - name: Run unicom daily task
+      if: ${{ env.ENABLE_UNICOM }}
+      env:
+        user: ${{secrets.user2}}
+        password: ${{secrets.password}}
+        appid: ${{secrets.appid}}
+      run: node index.js unicom --user=${user} --password=${password} --appid=${appid}
+      
+      # 运行 unicom 签到任务
+    - name: Run unicom daily task
+      if: ${{ env.ENABLE_UNICOM }}
+      env:
+        user: ${{secrets.user3}}
+        password: ${{secrets.password}}
+        appid: ${{secrets.appid}}
+      run: node index.js unicom --user=${user} --password=${password} --appid=${appid}
 
